@@ -1,0 +1,50 @@
+CREATE DATABASE curso_node_react_js
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'Portuguese_Brazil.1252'
+       LC_CTYPE = 'Portuguese_Brazil.1252'
+       CONNECTION LIMIT = -1;
+
+create table tasks (
+ id serial primary key,
+ title text not null,
+ description text,
+ status integer,
+ created_at timestamp,
+ updated_at timestamp
+);
+
+insert into tasks (
+ title, description, status, created_at, updated_at
+) values (
+ 'Title One', 
+ 'Description',
+ 1,
+ current_timestamp,
+ current_timestamp
+);
+
+--------------------
+
+yarn init -y
+
+yarn add nodemon -D
+
+yarn add express
+
+yarn dev
+
+yarn add pg
+
+yarn add dotenv
+
+#.env
+# DATABASE Configuration
+HOST_DB=localhost
+PORT_DB=5432
+DATABASE_DB=curso_node_react_js
+USER_DB=postgres
+PASSWORD_DB=joelson
+
+git checkout -b feature/post-task
