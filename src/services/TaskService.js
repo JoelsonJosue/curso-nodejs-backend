@@ -6,6 +6,10 @@ const index = async () => {
     return await TaskRepository.findAll()
 }
 
+const show = async (id) => {
+    return await TaskRepository.findTaskById(id)
+}
+
 const store = async ({title, description, status}) => {
     return await TaskRepository.save({title, description, status})
 }
@@ -24,5 +28,5 @@ const update = async ({id, title, description, status, created_at}) => {
 }
 
 module.exports = {
-    index, store, existsById, destroy, update
+    index, store, existsById, destroy, update, show
 }
